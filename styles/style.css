@@ -190,3 +190,31 @@ button:disabled {
 #guidelinesBtn:hover {
     background-color: #2980b9;
 }
+
+
+.nav-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+.menulogo {
+    position: absolute;
+    right: 40px;
+    top: 30%;
+    transform: translateY(-50%);
+    height: 100px; 
+}
+
+.guide-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.guidelogo {
+    position: absolute;
+    left: 40px;
+    top: 60%;
+    transform: translateY(-50%);
+    height: 80px; 
+}
