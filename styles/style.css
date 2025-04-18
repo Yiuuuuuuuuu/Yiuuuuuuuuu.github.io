@@ -7,7 +7,7 @@ body {
     background-color: #f5f5f5;
 }
 
-/* Header Styles */
+
 header {
     background-color: #395169;
     color: white;
@@ -26,7 +26,7 @@ header h1 {
     margin-top: 1rem;
 }
 
-/* Navigation */
+
 .dropdown {
     position: relative;
     display: inline-block;
@@ -74,7 +74,6 @@ header h1 {
     background-color: #3e8e41;
 }
 
-/* Main Content */
 main {
     max-width: 1200px;
     margin: 0 auto;
@@ -93,7 +92,6 @@ h2 {
     padding-bottom: 0.5rem;
 }
 
-/* Q&A Container */
 .container {
     background-color: #ecf0f1;
     padding: 2rem;
@@ -190,8 +188,6 @@ button:disabled {
 #guidelinesBtn:hover {
     background-color: #2980b9;
 }
-
-
 
 .nav-container {
     position: relative;
