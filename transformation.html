@@ -31,24 +31,119 @@
 
     <main>
         <section>
-            <h2>Evolution of Computational Linguistics</h2>
-            <ol>
-                <li>Rule-based systems (1950s-1980s)</li>
-                <li>Statistical methods (1990s-2000s)</li>
-                <li>Neural networks (2010s)</li>
-                <li>Transformer models (2017-present)</li>
-            </ol>
+            <h2>Traditional Methods: Limitations</h2>
+            
+            <h3>Bag-of-Words (BoW)</h3>
+            <ul>
+                <li>Represents text as word-frequency vectors (e.g., "data": 1, "mining": 1).</li>
+                <li><strong>Limitations:</strong>
+                    <ul>
+                        <li>Ignores word order ("dog bites man" = "man bites dog").</li>
+                        <li>High-dimensional sparse matrices (inefficient for large vocabularies).</li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <h3>TF-IDF</h3>
+            <ul>
+                <li>Improves BoW by weighting words based on importance.
+                    <ul>
+                        <li>Downweights common words ("the"), upweights domain terms ("mining").</li>
+                    </ul>
+                </li>
+                <li><strong>Limitation:</strong> Still lacks context and word-order understanding.</li>
+            </ul>
+            
+            <h3>Feature Engineering (Non-English)</h3>
+            <ul>
+                <li><strong>Example (Chinese):</strong> Four-Corner Code (stroke/radical-based classification).</li>
+                <li><strong>Limitation:</strong> Manual effort, fails to capture semantics (e.g., 油 [oil] vs. 柚 [pomelo]).</li>
+            </ul>
         </section>
 
         <section>
-            <h2>Future Directions</h2>
+            <h2>Modern Solutions</h2>
+            
+            <h3>Word Embeddings</h3>
             <ul>
-                <li>More efficient model architectures</li>
-                <li>Better multilingual support</li>
-                <li>Improved reasoning capabilities</li>
-                <li>Integration with other AI domains</li>
-                <li>Ethical AI development</li>
+                <li>Dense vector representations (e.g., "king" → [0.5, -0.2, 0.7]).</li>
+                <li>Captures semantic relationships (e.g., 油 [oil] and 水 [water] are close in vector space).</li>
             </ul>
+            
+            <h3>Transformers</h3>
+            <ul>
+                <li><strong>Key Features:</strong>
+                    <ul>
+                        <li>Multi-head attention (e.g., links "bank" to "fees" not "river").</li>
+                        <li>Parallel processing, scalable for large datasets.</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Large Language Models (BERT vs. GPT)</h2>
+            
+            <h3>BERT (Bidirectional)</h3>
+            <ul>
+                <li><strong>Pre-training:</strong>
+                    <ul>
+                        <li>Masked Language Modeling (predict masked words).</li>
+                        <li>Next Sentence Prediction.</li>
+                    </ul>
+                </li>
+                <li><strong>Applications:</strong> Text classification, NER, QA.</li>
+            </ul>
+            
+            <h3>GPT (Autoregressive)</h3>
+            <ul>
+                <li><strong>Pre-training:</strong> Predicts next token left-to-right.</li>
+                <li><strong>Applications:</strong> Chatbots, creative text generation.</li>
+                <li><strong>Key Difference:</strong> GPT trained on conversational data (Reddit), BERT on structured text (BooksCorpus).</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Case Study: Chinese NLP</h2>
+            
+            <h3>Challenges</h3>
+            <ul>
+                <li>Logographic characters (e.g., 冰 [ice] vs. 河 [river]).</li>
+                <li>No phonetic cues, semantic ambiguity.</li>
+            </ul>
+            
+            <h3>Modern Solutions</h3>
+            <ul>
+                <li><strong>Subword Tokenization:</strong> Breaks characters into radicals/strokes.</li>
+                <li><strong>Contextual Embeddings (BERT):</strong> Links 冰 [ice] → 冷 [cold], 河 [river] → 湖 [lake].</li>
+                <li><strong>GPT-2:</strong> Generates coherent Chinese text using subword tokens.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Task Comparison</h2>
+            <table border="1">
+                <tr>
+                    <th>Task</th>
+                    <th>Traditional Method</th>
+                    <th>LLM Approach</th>
+                </tr>
+                <tr>
+                    <td>Semantic Analysis</td>
+                    <td>TF-IDF keyword scoring</td>
+                    <td>BERT's contextual embeddings</td>
+                </tr>
+                <tr>
+                    <td>Chatbots</td>
+                    <td>Rule-based (ELIZA)</td>
+                    <td>GPT-3 open-domain dialogue</td>
+                </tr>
+                <tr>
+                    <td>Chinese NLP</td>
+                    <td>Four-Corner Code</td>
+                    <td>Subword tokenization + BERT</td>
+                </tr>
+            </table>
         </section>
     </main>
     <footer>
